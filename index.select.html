@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>d3 start up</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <ul class="items">
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+    </ul>
+    <script>
+        //d3.selectAll('li').style('color', 'red');
+        //d3.selectAll('li:nth-child(odd)').style('color', 'red');
+        d3.select('li:nth-child(2n)').style('color', 'red');
+    </script>
+</body>
+</html>
