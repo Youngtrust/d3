@@ -8,6 +8,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
+    <p>My name is <span class="name"></span></p>
     <ul class="items">
         <li>This is an item</li>
         <li>This is an item</li>
@@ -16,11 +17,26 @@
         <li>This is an item</li>
     </ul>
     <script>
-        var numArr = [12, 20, 33, 40, 55];
-        d3.selectAll('.items li')
+        var numArr = [12, 20, 33, 40, 55, 50, 75];
+
+        var name = 'john doe'
+        // d3.selectAll('.items li')
+        //     .data(numArr)
+        //     .text(d => 'This is item number' + d)
+
+        // d3.selectAll('.items li')
+        //     .data(numArr)
+        //     .style('font-size', d => d+'px');
+
+        var li = d3.select('body').selectAll('.items li')
             .data(numArr)
-            .text(d => 'This is item number' + d)
-            
+            .text(d => 'This is item number' + d);
+        li.enter().append('li')
+            .text(d => 'This is item number' + d);
+        li.exit().remove();
+
+        d3.select('.name').text(name);
+
     </script>
 </body>
 </html>
